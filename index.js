@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const session = require("express-session")
 const flash = require("connect-flash");
-const User = require("./models/User")
+const User = require("./models/User");
 const passport = require("passport");
 var LocalStrategy = require('passport-local');
 

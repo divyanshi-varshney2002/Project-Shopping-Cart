@@ -13,9 +13,11 @@ router.get('/user/myorders',isLoggedIn,async(req, res) => {
         populate: {
             path: 'orderedProducts'
         }
+        //divyanshi varshney 201500233
     });
 
     res.render('orders/myOrder',{orders:user.orders});
 });
 
 module.exports = router;
+//divyanshi varshney 201500233

@@ -10,19 +10,11 @@ router.get("/register", (req,res)=>{
     res.render("auth/signup")
 })
 
+//divyanshi varshney 201500233
 
-// router.get("/fakeUser",async(req,res)=>{
-    
-//     const user = new User({username: "fakeUser", email: "abcd@gmail.com"});
-//      const newUser = await User.register(user , "12345");
-//     res.send(newUser);
-
-// })
-
-
-//register new user
 router.post("/register",async(req,res)=>{
 
+//divyanshi varshney 201500233
     const {username,password,email}= req.body;
 
         const user = new User({username, email})
@@ -31,6 +23,7 @@ router.post("/register",async(req,res)=>{
 
       req.flash("success", " You have Registered Sucessfully")
 
+//divyanshi varshney 201500233
     res.redirect("/login")
 
 })

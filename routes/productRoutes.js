@@ -4,6 +4,7 @@ const Product = require("../models/Product");
 const Review = require("../models/Review");
 const {isLoggedIn} = require("../middleware")
 
+//divyanshi varshney 201500233
 
 // get all products
 router.get("/products", async(req,res)=>{
@@ -12,12 +13,14 @@ router.get("/products", async(req,res)=>{
 
     res.render("./products/product" , {products})
 
+//divyanshi varshney 201500233
 })
 
 
 // get forms to create a new product
 router.get("/products/new", async(req,res)=>{
 
+//divyanshi varshney 201500233
      res.render("./products/new")
  
  })
@@ -26,6 +29,7 @@ router.get("/products/new", async(req,res)=>{
  //create a new product
  router.post("/products", async(req,res)=>{
 
+//divyanshi varshney 201500233
     const {name , img , desc , price} = req.body;
 
     await Product.create({name , img , desc , price});

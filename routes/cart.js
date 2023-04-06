@@ -10,8 +10,10 @@ module.exports.addToCart=async(req, res) => {
     const { productid } = req.params;
     const userid = req.user._id;
     const product = await Product.findById(productid);
+    //divyanshi varshney 201500233
     const user = await User.findById(userid);
     user.cart.push(product);
     await user.save();
     res.redirect('/user/cart');
 }
+//divyanshi varshney 201500233

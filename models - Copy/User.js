@@ -1,17 +1,28 @@
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
-
-
 const userSchema = new mongoose.Schema({
-    // username: String, --> This is automatically added by passport-local-mongoose, no need to add ourselve
-    // password: String, --> This is automatically added by passport-local-mongoose
-    email: String,
+    email: {
+        type: String,
+        trim: true,
+        required: true
+    },
+    role: {
+        type: String,
+        default:'buyer'
+    },
+    cart: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref:'Product'
+        }
+    ],
+    wishList: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref:'Product'
+        }
+    ]
 });
-
-
 userSchema.plugin(passportLocalMongoose);
-
-
 const User = mongoose.model('User', userSchema);
-
 module.exports = User;

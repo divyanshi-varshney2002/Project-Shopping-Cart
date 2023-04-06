@@ -13,7 +13,7 @@ const flash = require("connect-flash");
 const User = require("./models/User");
 const passport = require("passport");
 var LocalStrategy = require('passport-local');
-
+//divyanshi varshney 201500233
 const dbUrl = process.env.DB_URI
 
 
@@ -38,6 +38,7 @@ const sessionflash = {
       expires: Date.now()  + 7 *24*60*60*1000
     }
   };
+  //divyanshi varshney 201500233
   
   app.use(session(sessionflash))
   app.use(flash());
@@ -53,6 +54,7 @@ const sessionflash = {
 
   });
   
+//divyanshi varshney 201500233
 
 
 // All Product Routes

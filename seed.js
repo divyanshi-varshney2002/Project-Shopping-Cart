@@ -3,7 +3,7 @@ if(process.env.NODE_ENV !="production")
   require("dotenv").config({path:"./config.env"})
 }
 const mongoose = require("mongoose");
-const Product = require("./models/Product")
+const Product = require("./models/product")
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.DB_URI)
 .then(()=> console.log(" DB CONNECTED!"))
@@ -57,16 +57,11 @@ const products = [
 
 ]
 
- async function seedProducts(){
-
-
-      await Product.deleteMany({});
-
-     await Product.insertMany(products);
-
-     console.log(" Product Seeded!")
-
+async function seedDB(){
+    await Product.deleteMany({});
+    await Product.insertMany(products);
+    console.log('Product Seeded');
 }
 
-seedProducts();
+seedDB();
 
